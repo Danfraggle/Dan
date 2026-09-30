@@ -1,0 +1,65 @@
+/* FULL SCREEN (min-width: 1025px) */
+
+header {
+    padding: 20px 60px;
+}
+
+header img:first-child {
+    width: 500px;
+}
+
+header div {
+    justify-content: space-between;
+}
+
+header img:last-child {
+    width: 350px;
+}   
+
+nav a {
+    font-size: 1.25rem;
+}
+
+main {
+    padding: 30px 60px;
+}
+
+main h1 {
+    font-size: 1.75rem;
+}
+
+.marks-table th,
+.marks-table td {
+    padding: 14px;
+}   
+form {
+    margin: 10px 30px 30px 60px;
+}   
+.details-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.details-container section {
+    flex: 1;
+}   
+.details-container form {
+    width: 100%;
+}
+.hamburger {
+    display: none;
+}
+
+nav {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
+    margin-top: 10px;
+}   
+#contact_form {
+    margin: 20px auto;
+    width: 40%;
+}      

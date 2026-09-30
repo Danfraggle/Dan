@@ -1,0 +1,55 @@
+/* TABLET (481px – 768px) */
+@media (max-width: 550px) {
+    header img:first-child {
+        width: 180px;
+    }
+
+    header img:last-child {
+        width: 120px;
+    }
+}   
+header {
+    padding: 15px 25px;
+}
+
+header img:first-child {
+    width: 250px;
+}
+
+header img:last-child {
+    width: 180px;
+    margin-left: auto;
+}
+
+.collage-name {
+    margin-left: 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+nav {
+    flex-direction: column;
+    gap: 8px;
+}
+
+nav a {
+    font-size: 1rem;
+    padding: 10px;
+    text-align: center;
+}   
+main {
+    padding: 20px 20px;
+}
+
+main h1 {
+    font-size: 1.45rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+.marks-table th,
+.marks-table td {
+    padding: 10px;
+}   

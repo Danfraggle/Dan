@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Chisholm - Student Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Chisholm_Style_Sheet.css"/>
+    <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width:480px)"/>
+    <link rel="stylesheet" href="css/tablet.css" media="screen and (min-width:481px) and (max-width:768px)"/>
+    <link rel="stylesheet" href="css/small_laptop.css" media="screen and (min-width:769px) and (max-width:1024px)"/>
+    <link rel="stylesheet" href="css/full_screen.css" media="screen and (min-width:1025px)"/>
+</head>
+<body>
+
+    <header>
+        <div>
+            <img src="images/Chisholm-logo2.png" alt="Chisholm logo"/>
+            <img src="images/Flags.png" alt="Flags of Chisholm"/>
+          </div>
+          <div class="collage-name">HIGHER EDUCATION COLLAGE</div>
+          <input type="checkbox" id="nav-toggle">
+          <label for="nav-toggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+          </label>
+          <nav>
+          <a href="Chisholm_Student_Portal.html">Home</a>
+          <a href="Chisholm_Student_Details.html">Student Details</a>
+          <a href="Chisholm_Enrolments.html">Enrolments</a>
+          <a href="Chisholm_Results.html">Results</a>
+          <a href="Chisholm_Help_Support.html">Help/Support</a>
+          </nav>   
+    </header>
+
+    <main>
+    <h1>Student Details</h1>
+
+    <form id="update_form" method="post">
+     <div class="table-wrapper">
+        <table class="details-table">
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Current Value</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>First Name</td>
+                    <td>Daniel</td>
+                    <td><input type="text" name="firstname" value="Daniel"></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td>Stephenson</td>
+                    <td><input type="text" name="lastname" value="Stephenson"></td>
+                </tr>
+                <tr>
+                <td>Gender</td>
+                     <td>Male</td>
+                     <td>
+                         <div class="radio-row">
+                              <label><input type="radio" name="gender" value="male"> Male</label>
+                              <label><input type="radio" name="gender" value="female"> Female</label>
+                              <label><input type="radio" name="gender" value="other"> Other</label>
+                         </div>
+                         </td>   
+                </tr>   
+                <tr>
+                    <td>Student Email</td>
+                    <td>s123456789@my.chisholm.edu.au</td>
+                    <td><input type="email" name="email" value=""></td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>0412 345 678</td>
+                    <td><input type="tel" name="" value=""></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>27 Example rd, Dandenong VIC 3174</td>
+                    <td><textarea name="address" rows="2">27 Example rd, Dandenong VIC 3174</textarea></textarea></td>
+                </tr>
+                <tr>
+                    <td>State</td>
+                    <td>VIC</td>
+                    <td>
+                        <select name="state">
+                            <option value="NSW">NSW</option>
+                            <option value="VIC" selected>VIC</option>
+                            <option value="QLD">QLD</option>
+                            <option value="WA">WA</option>
+                            <option value="SA">SA</option>
+                            <option value="TAS">TAS</option>
+                            <option value="NT">NT</option>
+                            <option value="ACT">ACT</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Postcode</td>
+                    <td>3174</td>
+                    <td><input type="number" name="postcode" value="3174" min="1000" max="9999"></td>
+                </tr>
+            </tbody>
+        </table>
+     </div>
+        <button type="submit">Save Changes</button>
+        <button type="reset">Reset</button>
+        <div class="bottom-sections">
+     <fieldset>
+          <legend>Emergency Contact</legend>
+
+          <label for="emergency_name">Contact Name:</label>
+          <input type="text" id="emergency_name" name="emergency_name">
+
+          <label for="emergency_phone">Contact Phone:</label>
+          <input type="tel" id="emergency_phone" name="emergency_phone">
+
+          <label for="relationship">Relationship:</label>
+          <select id="relationship" name="relationship">
+               <option value="">-- Select --</option>
+               <option value="parent">Parent</option>
+               <option value="partner">Partner</option>
+               <option value="child">Adult Child</option>
+               <option value="doctor">Doctor</option>
+               <option value="sibling">Sibling</option>
+               <option value="friend">Friend</option>
+               <option value="other">Other</option>
+          </select>
+     </fieldset>
+
+     <fieldset>
+          <legend>Notifications</legend>
+
+          <label><input type="checkbox" name="notify_email"> Email me about enrolment changes</label>
+          <label><input type="checkbox" name="notify_results"> Email me when results are released</label>
+          <label><input type="checkbox" name="notify_news"> Send me college news and events</label>
+     </fieldset>
+     </div>   
+
+    </form>
+<img src="images/student_details2.png" alt="Picture of Chisholm students" class="map-img"/>
+</main>   
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Chisholm Higher Education Collage. All rights reserved.</p>
+            <p>Designed &amp; developed by Daniel Stephenson</p>
+            <p>Last updated: August 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>   

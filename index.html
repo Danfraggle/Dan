@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+     <title>chisholm-Student Portal</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+     <link rel="stylesheet" href="css/Chisholm_Style_Sheet.css"/>
+     <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width:480px)"/>
+     <link rel="stylesheet" href="css/tablet.css" media="screen and (min-width:481px) and (max-width:768px)"/>
+     <link rel="stylesheet" href="css/small_laptop.css" media="screen and (min-width:769px) and (max-width:1024px)"/>
+     <link rel="stylesheet" href="css/full_screen.css" media="screen and (min-width:1025px)"/>   
+</head>
+<body>
+
+     <header>
+     
+          <div>
+            <img src="images/Chisholm-logo2.png" alt="Chisholm logo"/>
+            <img src="images/Flags.png" alt="Flags of Chisholm"/>
+          </div>
+          <div class="collage-name">HIGHER EDUCATION COLLAGE</div>
+          <input type="checkbox" id="nav-toggle">
+          <label for="nav-toggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+          </label>
+          <nav>
+          <a href="Chisholm_Student_Portal.html">Home</a>
+          <a href="Chisholm_Student_Details.html">Student Details</a>
+          <a href="Chisholm_Enrolments.html">Enrolments</a>
+          <a href="Chisholm_Results.html">Results</a>
+          <a href="Chisholm_Help_Support.html">Help/Support</a>
+          </nav>   
+         
+     </header>
+
+     
+<main>
+     <h1>Home</h1>
+     <p class="welcome"> Welcome:</p>
+     <p class="Intro">To Chisholm Student Portal, where students can find all their relevant information.
+          From enrolement history, results, contacts, help/support, maps and more!!
+     </p>
+     <div class="map-wrapper">
+     <label for="campus-select">View Campus:</label>
+     <select id="campus-select" autocomplete="off">
+          <option value="images/Dandenong-map.png">Dandenong</option>
+          <option value="images/Frankston-map.png">Frankston</option>
+          <option value="images/Cranbourne-map.png">Cranbourne</option>
+          <option value="images/Berwick-map.png">Berwick</option>
+     </select>
+     <img id="campus-map" src="images/Dandenong-map.png" alt="Campus map" class="map-img">
+
+     </div>   
+    
+</main> 
+     <footer>
+     <div class="footer-content">
+          <p>&copy; 2026 Chisholm Higher Education Collage. All rights reserved.</p>
+          <p>Designed &amp; developed by Daniel Stephenson</p>
+          <p>Last updated: August 2026</p>
+     </div>
+     </footer>
+     <script>
+     document.getElementById("campus-select").addEventListener("change", function() {
+          document.getElementById("campus-map").src = this.value;
+     });
+     </script>     
+</body>
+</html>

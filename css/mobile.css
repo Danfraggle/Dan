@@ -1,0 +1,67 @@
+/* MOBILE (max-width: 480px) */
+
+header {
+    padding: 15px;
+    align-items: center;
+}
+
+header div {
+    justify-content: center;
+    gap: 10px;
+}
+
+header img:first-child {
+    width: 150px;
+}
+
+header img:last-child {
+    width: 90px;
+    margin-left: 0;
+}
+
+.collage-name {
+    margin-left: 0;
+    font-size: 15px;
+    text-align: center;
+}
+
+nav {
+    flex-direction: column;
+    gap: 8px;
+}
+
+nav a {
+    font-size: 16px;
+    padding: 10px;
+}
+
+main {
+    padding: 15px 10px;
+}
+
+main h1 {
+    font-size: 1.25rem;
+}
+
+.marks-table {
+    font-size: 12px;
+}
+
+.marks-table th,
+.marks-table td {
+    padding: 6px;
+}   
+h2 {
+    font-size: 1.2rem;
+}   
+.marks-table {
+    margin-top: 2px;
+}
+.details-table th,
+.details-table td {
+    font-size: 12px;
+    padding: 6px;
+} 
+.map-wrapper {
+    margin: 0 -10px;
+}      
