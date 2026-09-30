@@ -6,25 +6,30 @@ header {
 }
 
 header div {
+    flex-direction: column;
     justify-content: center;
     gap: 10px;
 }
 
 header img:first-child {
-    width: 150px;
+    width: 220px;
 }
 
 header img:last-child {
-    width: 90px;
+    width: 100px;
     margin-left: 0;
 }
 
 .collage-name {
     margin-left: 0;
-    font-size: 15px;
+    font-size: 13px;
     text-align: center;
 }
-
+.Intro {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: rgb(45, 8, 8);
+}   
 nav {
     flex-direction: column;
     gap: 8px;
@@ -36,11 +41,13 @@ nav a {
 }
 
 main {
-    padding: 15px 10px;
+    padding: 0px 5px;
 }
 
 main h1 {
     font-size: 1.25rem;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 .marks-table {
@@ -65,3 +72,13 @@ h2 {
 .map-wrapper {
     margin: 0 -10px;
 }      
+
+@media only screen and (max-width: 480px) {
+
+    .course-dropdown summary {
+        font-size: 14px;
+    }
+    .course-dropdown li a {
+        font-size: 13px;
+    }
+}

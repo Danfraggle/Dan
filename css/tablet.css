@@ -7,6 +7,12 @@
     header img:last-child {
         width: 120px;
     }
+        .course-dropdown summary {
+        font-size: 14px;
+    }
+    .course-dropdown li a {
+        font-size: 13px;
+    }
 }   
 header {
     padding: 15px 25px;

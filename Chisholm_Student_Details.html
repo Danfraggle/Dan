@@ -28,65 +28,74 @@
           <a href="Chisholm_Student_Details.html">Student Details</a>
           <a href="Chisholm_Enrolments.html">Enrolments</a>
           <a href="Chisholm_Results.html">Results</a>
-          <a href="Chisholm_Help_Support.html">Help/Support</a>
+          <a href="Chisholm_Help_Support.html">Help/Support/Contact</a>
           </nav>   
     </header>
 
     <main>
     <h1>Student Details</h1>
 
-    <form id="update_form" method="post">
-     <div class="table-wrapper">
+   <form id="update_form" method="post">
+    <div class="table-wrapper">
         <table class="details-table">
             <thead>
                 <tr>
                     <th>Field</th>
                     <th>Current Value</th>
-                    <th>Update</th>
+                    <th>Update <span class="required-note">(* = required)</span></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>First Name</td>
-                    <td>Daniel</td>
-                    <td><input type="text" name="firstname" value="Daniel"></td>
+                    <td>Dan</td>
+                    <td><span class="req">*</span><input type="text" name="firstname" value="" required minlength="2" maxlength="50"></td>
                 </tr>
                 <tr>
                     <td>Last Name</td>
-                    <td>Stephenson</td>
-                    <td><input type="text" name="lastname" value="Stephenson"></td>
+                    <td>Fraggle</td>
+                    <td><span class="req">*</span><input type="text" name="lastname" value="" required minlength="2" maxlength="50"></td>
                 </tr>
                 <tr>
-                <td>Gender</td>
-                     <td>Male</td>
-                     <td>
-                         <div class="radio-row">
-                              <label><input type="radio" name="gender" value="male"> Male</label>
-                              <label><input type="radio" name="gender" value="female"> Female</label>
-                              <label><input type="radio" name="gender" value="other"> Other</label>
-                         </div>
-                         </td>   
+                    <td>Date of Birth</td>
+                    <td>1/2/2000</td>
+                    <td><span class="req">*</span><input type="text" name="dob" id="dob" value="" required pattern="\d{2}/\d{2}/\d{4}" title="DD/MM/YYYY"></td>
+                    <!-- <input type="date" name="dob" required max="2026-09-30" min="1906-09-30"> -->   
                 </tr>   
+                <tr>
+                    <td>Gender</td>
+                    <td>Male</td>
+                    <td>
+                        <span class="req">*</span>
+                        <div class="radio-row">
+                            <label><input type="radio" name="gender" value="male" required checked> Male</label>
+                            <label><input type="radio" name="gender" value="female"> Female</label>
+                            <label><input type="radio" name="gender" value="other"> Other</label>
+                        </div>
+                        
+                    </td>
+                </tr>
                 <tr>
                     <td>Student Email</td>
                     <td>s123456789@my.chisholm.edu.au</td>
-                    <td><input type="email" name="email" value=""></td>
+                    <td><span class="req">*</span><input type="email" name="email" value="" required maxlength="100"></td>
                 </tr>
                 <tr>
                     <td>Phone</td>
                     <td>0412 345 678</td>
-                    <td><input type="tel" name="" value=""></td>
+                    <td><span class="req">*</span><input type="tel" name="phone" value="" required pattern="04\d{8}|\+614\d{8}" title="Enter an AU mobile, e.g. 0412345678"></td>
                 </tr>
                 <tr>
                     <td>Address</td>
                     <td>27 Example rd, Dandenong VIC 3174</td>
-                    <td><textarea name="address" rows="2">27 Example rd, Dandenong VIC 3174</textarea></textarea></td>
+                    <td><span class="req">*</span><textarea name="address" rows="2" required maxlength="100"></textarea></td>
                 </tr>
                 <tr>
                     <td>State</td>
                     <td>VIC</td>
                     <td>
-                        <select name="state">
+                        <span class="req">*</span>
+                        <select name="state" required>
                             <option value="NSW">NSW</option>
                             <option value="VIC" selected>VIC</option>
                             <option value="QLD">QLD</option>
@@ -95,52 +104,74 @@
                             <option value="TAS">TAS</option>
                             <option value="NT">NT</option>
                             <option value="ACT">ACT</option>
-                        </select>
+                        </select>   
                     </td>
                 </tr>
                 <tr>
                     <td>Postcode</td>
                     <td>3174</td>
-                    <td><input type="number" name="postcode" value="3174" min="1000" max="9999"></td>
+                    <td><span class="req">*</span><input type="number" name="postcode" value="" required min="1000" max="9999"></td>
+                </tr>
+
+                <tr class="section-header">
+                    <td colspan="3">Emergency Contact</td>
+                </tr>
+                <tr>
+                    <td>Contact Name</td>
+                    <td>Sarah Fraggle</td>
+                    <td><span class="req">*</span><input type="text" name="emergency_name" value="" required minlength="2" maxlength="50"></td>
+                </tr>
+                <tr>
+                    <td>Contact Phone</td>
+                    <td>0400 111 222</td>
+                    <td><span class="req">*</span><input type="tel" name="emergency_phone" value="" required pattern="04\d{8}|\+614\d{8}" title="Enter an AU mobile, e.g. 0412345678"></td>
+                </tr>
+                <tr>
+                    <td>Relationship</td>
+                    <td>Parent</td>
+                    <td>
+                        <span class="req">*</span>
+                        <select name="relationship" required>
+                            <option value="">-- Select --</option>
+                            <option value="parent" selected>Parent</option>
+                            <option value="partner">Partner</option>
+                            <option value="child">Adult Child</option>
+                            <option value="doctor">Doctor</option>
+                            <option value="sibling">Sibling</option>
+                            <option value="friend">Friend</option>
+                            <option value="other">Other</option>
+                        </select>
+                        
+                    </td>
+                </tr>
+
+                <tr class="section-header">
+                    <td colspan="3">Notifications</td>
+                </tr>
+                <tr>
+                    <td>Enrolment Changes</td>
+                    <td>Enabled</td>
+                    <td><label><input type="checkbox" name="notify_email" checked> Email me about enrolment changes</label></td>
+                </tr>
+                <tr>
+                    <td>Results</td>
+                    <td>Enabled</td>
+                    <td><label><input type="checkbox" name="notify_results" checked> Email me when results are released</label></td>
+                </tr>
+                <tr>
+                    <td>College News</td>
+                    <td>Disabled</td>
+                    <td><label><input type="checkbox" name="notify_news"> Send me college news and events</label></td>
                 </tr>
             </tbody>
         </table>
-     </div>
+    </div>
+
+    <div class="form-actions">
         <button type="submit">Save Changes</button>
         <button type="reset">Reset</button>
-        <div class="bottom-sections">
-     <fieldset>
-          <legend>Emergency Contact</legend>
-
-          <label for="emergency_name">Contact Name:</label>
-          <input type="text" id="emergency_name" name="emergency_name">
-
-          <label for="emergency_phone">Contact Phone:</label>
-          <input type="tel" id="emergency_phone" name="emergency_phone">
-
-          <label for="relationship">Relationship:</label>
-          <select id="relationship" name="relationship">
-               <option value="">-- Select --</option>
-               <option value="parent">Parent</option>
-               <option value="partner">Partner</option>
-               <option value="child">Adult Child</option>
-               <option value="doctor">Doctor</option>
-               <option value="sibling">Sibling</option>
-               <option value="friend">Friend</option>
-               <option value="other">Other</option>
-          </select>
-     </fieldset>
-
-     <fieldset>
-          <legend>Notifications</legend>
-
-          <label><input type="checkbox" name="notify_email"> Email me about enrolment changes</label>
-          <label><input type="checkbox" name="notify_results"> Email me when results are released</label>
-          <label><input type="checkbox" name="notify_news"> Send me college news and events</label>
-     </fieldset>
-     </div>   
-
-    </form>
+    </div>
+</form>   
 <img src="images/student_details2.png" alt="Picture of Chisholm students" class="map-img"/>
 </main>   
 
@@ -148,9 +179,138 @@
         <div class="footer-content">
             <p>&copy; 2026 Chisholm Higher Education Collage. All rights reserved.</p>
             <p>Designed &amp; developed by Daniel Stephenson</p>
-            <p>Last updated: August 2026</p>
+            <p>Last updated: September 2026</p>
         </div>
     </footer>
 
+
+<script src="jQuery/jquery-4.0.0.min.js"></script>
+<script src="jquery-ui-1.14.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="jquery-ui-1.14.2/jquery-ui.min.css">
+<script src="jquery.validate.min.js"></script>   
+<script>
+
+// Validate — Radio buttons
+
+document.querySelectorAll('input[type="radio"][name="gender"]').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        this.closest('tr').children[1].textContent =
+            this.value.charAt(0).toUpperCase() + this.value.slice(1);
+    });
+});
+
+
+// Validate — Checkboxes
+
+document.querySelectorAll('input[type="checkbox"][name^="notify_"]').forEach(function(cb) {
+    cb.addEventListener('change', function() {
+        this.closest('tr').children[1].textContent =
+            this.checked ? 'Enabled' : 'Disabled';
+    });
+});
+
+// Validate — Text inputs on blur
+
+document.querySelectorAll('#update_form input[type="text"], ' +
+    '#update_form input[type="email"], ' +
+    '#update_form input[type="tel"]').forEach(function(field) {
+    field.addEventListener('blur', function() {
+        if (this.value.trim() !== '') {
+            this.closest('tr').children[1].textContent = this.value;
+        }
+    });
+});
+
+
+// jQuery UI component — Datepicker
+
+$(function() {
+    $('#dob').datepicker({
+        dateFormat: 'dd/mm/yy',
+        maxDate: '-16y',
+        minDate: '-100y',
+        changeMonth: true,
+        changeYear: true
+    });   
+});
+
+
+// jQuery extention (plugin) — Validation
+
+$(function() {
+
+    $.validator.addMethod("phonePattern", function(value, element) {
+        return this.optional(element) || /^[0-9+\s\-()]{10,15}$/.test(value);
+    }, 'Numbers, +, spaces, dashes only (10–15 chars)');
+
+    $.validator.addMethod("namePattern", function(value, element) {
+        return this.optional(element) || /^[A-Za-zÀ-ÿ'\- ]{2,50}$/.test(value);
+    }, 'Letters, spaces, hyphens and apostrophes only (2–50 chars)');
+
+    $.validator.addMethod("addressPattern", function(value, element) {
+        return this.optional(element) || /^[A-Za-z0-9\s,\.#\-\/'&()]{10,150}$/.test(value);
+    }, 'Invalid characters or too short (10–150 chars)');
+
+    $.validator.addMethod("dobPattern", function(value, element) {
+    if (this.optional(element)) return true;
+    var pattern = /^(\d{2})\/(\d{2})\/(\d{4})$/;
+    var match = value.match(pattern);
+    if (!match) return false;
+
+    var day = parseInt(match[1], 10);
+    var month = parseInt(match[2], 10);
+    var year = parseInt(match[3], 10);
+
+    if (month < 1 || month > 12) return false;
+    var daysInMonth = new Date(year, month, 0).getDate();
+    if (day < 1 || day > daysInMonth) return false;
+    return true;
+}, 'Enter a valid date in DD/MM/YYYY format');   
+
+    $('#update_form').validate({
+        
+        rules: {
+            email:     { required: true, email: true },
+            phone:     { required: true, phonePattern: true },
+            firstname: { required: true, namePattern: true },
+            lastname:  { required: true, namePattern: true },
+            dob: { required: true, dobPattern: true },
+            address:   { required: true, addressPattern: true },
+            state:     'required',
+            postcode:  { required: true, min: 1000, max: 9999 },
+            emergency_name:  { required: true, namePattern: true },
+            emergency_phone: { required: true, phonePattern: true },
+            relationship: 'required'
+        },
+        messages: {
+            email:     { required: 'Email is required', email: 'Please enter a valid email address' },
+            phone:     { required: 'Phone is required', phonePattern: 'Enter an AU mobile e.g. 0412345678   ,  0412 345 678   ,  +61 412 345 678' },
+            firstname: { required: 'First name is required', namePattern: 'Letters, spaces, hyphens and apostrophes only (2–50 chars)' },
+            lastname:  { required: 'Last name is required', namePattern: 'Letters, spaces, hyphens and apostrophes only (2–50 chars)' },
+            dob: { required: 'Date of birth is required', dobPattern: 'Please enter a valid date in DD/MM/YYYY format' },
+            address:   { required: 'Address is required', addressPattern: 'Use letters, numbers, spaces, commas, #, - and / (10–150 chars)' },
+            state:     'Please select a state',
+            postcode:  { required: 'Postcode is required', min: 'Postcode must be at least 1000', max: 'Postcode must be at most 9999' },
+            emergency_name:  { required: 'Name is required', namePattern: 'Letters, spaces, hyphens and apostrophes only (2–50 chars)' },
+            emergency_phone: { required: 'Phone is required', phonePattern: 'Enter an AU number, e.g. 0412345678 - Numbers, +, spaces, dashes only (10–15 chars)' },
+            relationship: 'Please select a relationship' 
+        },
+        submitHandler: function(form) {
+
+            var btn = document.querySelector('#update_form button[type="submit"]');
+            btn.textContent = '✓ Saved!';
+            btn.style.backgroundColor = '#4CAF50';
+            btn.style.color = 'white';
+            setTimeout(function() {
+                btn.textContent = 'Save Changes';
+                btn.style.backgroundColor = '';
+                btn.style.color = '';
+            alert('Form is valid! Your details will now be submitted.');
+            }, 1000);      
+        }
+    });
+
+});   
+</script>
 </body>
 </html>   
