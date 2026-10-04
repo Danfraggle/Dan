@@ -40,22 +40,29 @@
         <table class="details-table">
             <thead>
                 <tr>
+                    <th colspan="3" class="student-id-value">Student ID</th>
+                </tr>
+                <tr>
+                    <td colspan="3" class="student-id-value">s1234567890</td>
+                </tr>   
+                <tr>
                     <th>Field</th>
                     <th>Current Value</th>
                     <th>Update <span class="required-note">(* = required)</span></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>First Name</td>
-                    <td>Dan</td>
-                    <td><span class="req">*</span><input type="text" name="firstname" value="" required minlength="2" maxlength="50"></td>
-                </tr>
-                <tr>
+                <tr class="admin-note">
                     <td>Last Name</td>
                     <td>Fraggle</td>
-                    <td><span class="req">*</span><input type="text" name="lastname" value="" required minlength="2" maxlength="50"></td>
+                    <td class="centre-cell"><span class="readonly-value"># See Admin for name change</span></td>
                 </tr>
+                <tr>
+                    <td>First Name</td>
+                    <td>Daniel</td>
+                    <td><span><small>(Preferred name)</small></span><input type="text" name="firstname" value="" minlength="2" maxlength="50"></td>
+                </tr>
+                
                 <tr>
                     <td>Date of Birth</td>
                     <td>1/2/2000</td>
@@ -133,13 +140,13 @@
                         <span class="req">*</span>
                         <select name="relationship" required>
                             <option value="">-- Select --</option>
-                            <option value="parent" selected>Parent</option>
-                            <option value="partner">Partner</option>
-                            <option value="child">Adult Child</option>
-                            <option value="doctor">Doctor</option>
-                            <option value="sibling">Sibling</option>
-                            <option value="friend">Friend</option>
-                            <option value="other">Other</option>
+                            <option value="Parent" selected>Parent</option>
+                            <option value="Partner">Partner</option>
+                            <option value="Adult Child">Adult Child</option>
+                            <option value="Doctor">Doctor</option>
+                            <option value="Sibling">Sibling</option>
+                            <option value="Friend">Friend</option>
+                            <option value="Other">Other</option>
                         </select>
                         
                     </td>
@@ -213,13 +220,15 @@ document.querySelectorAll('input[type="checkbox"][name^="notify_"]').forEach(fun
 
 document.querySelectorAll('#update_form input[type="text"], ' +
     '#update_form input[type="email"], ' +
-    '#update_form input[type="tel"]').forEach(function(field) {
+    '#update_form input[type="tel"], ' +
+    '#update_form select, ' +
+    '#update_form textarea').forEach(function(field) {
     field.addEventListener('blur', function() {
         if (this.value.trim() !== '') {
             this.closest('tr').children[1].textContent = this.value;
         }
     });
-});
+});   
 
 
 // jQuery UI component — Datepicker
@@ -272,7 +281,7 @@ $(function() {
         rules: {
             email:     { required: true, email: true },
             phone:     { required: true, phonePattern: true },
-            firstname: { required: true, namePattern: true },
+            firstname: { required: false, namePattern: true },
             lastname:  { required: true, namePattern: true },
             dob: { required: true, dobPattern: true },
             address:   { required: true, addressPattern: true },
@@ -285,7 +294,7 @@ $(function() {
         messages: {
             email:     { required: 'Email is required', email: 'Please enter a valid email address' },
             phone:     { required: 'Phone is required', phonePattern: 'Enter an AU mobile e.g. 0412345678   ,  0412 345 678   ,  +61 412 345 678' },
-            firstname: { required: 'First name is required', namePattern: 'Letters, spaces, hyphens and apostrophes only (2–50 chars)' },
+            firstname: { namePattern: 'Letters, spaces, hyphens and apostrophes only (2–50 chars)' },
             lastname:  { required: 'Last name is required', namePattern: 'Letters, spaces, hyphens and apostrophes only (2–50 chars)' },
             dob: { required: 'Date of birth is required', dobPattern: 'Please enter a valid date in DD/MM/YYYY format' },
             address:   { required: 'Address is required', addressPattern: 'Use letters, numbers, spaces, commas, #, - and / (10–150 chars)' },

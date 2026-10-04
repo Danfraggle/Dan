@@ -492,4 +492,18 @@ nav {
 .course-dropdown li a:hover {
     background-color: rgb(107, 131, 185);
     color: white;
+}  
+td.student-id-value {
+  font-size: 1.2em;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}    
+.readonly-value {  
+  color: #555;
+  background: #f4f4f4;
+  padding: 8px 12px;
+  border-radius: 3px;
 }   
+tr.admin-note td {
+  padding: 20px 8px;
+}    
